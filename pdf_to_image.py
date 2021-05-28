@@ -38,7 +38,7 @@ def main():
     t1 = time.perf_counter()
     print("Collecting")
     img_urls = convert_from_path(f'{pdf_name}.pdf',
-                                 output_folder=g)  # if dir "new" exists in pwd, change new to something else
+                                 output_folder=g)  
     print(f"Collected {len(img_urls)} pages.")
     with concurrent.futures.ThreadPoolExecutor() as executor:
         executor.map(download_image, enumerate(img_urls))
